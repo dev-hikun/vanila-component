@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Harry</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body { margin: 0; padding: 0 } 
+      .wrapper { width: 80%; margin: 0 auto; }
+      .example-box { padding: 24px; background-color: #E7EBF0; display: flex; justify-content: center; border-radius: 10px }
+      .v-list-button { background-color: red !important }
+    </style>
+    <link rel="stylesheet" href="./assets/accordion.css" />
+    <script src="./js/virtualized-list/index.js"></script>
+    <script src="./js/tabs/index.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Virtualized List</h2>
+      <div class="example-box">
+        <!-- v-list의 item -->
+        <template id="item">
+          <div class="item">
+            <button type="button">[[index]]번째 아이템</button>
+            <!-- <button type="button">Item [[index]]</button> -->
+          </div>
+        </template>
+        <!-- v-list -->
+        <v-list w="360" h="400" item-size="40" item-count="100000">
+        </v-list>
+      </div>
+    </div>
+    <div class="wrapper">
+      <h2>Basic tabs</h2>
+      <div class="example-box">
+        <div>
+          <tab-list>
+            <tab-item aria-controls="Tab-1" disabled>Tab 1</tab-item>
+            <tab-item aria-controls="Tab-2">Tab 2</tab-item>
+            <tab-item aria-controls="Tab-3">Tab 3</tab-item>
+          </tab-list>
+          <tab-panel id="Tab-1">
+            This is a Tab-1
+          </tab-panel>
+          <tab-panel id="Tab-2">
+            This is a Tab-2
+          </tab-panel>
+          <tab-panel id="Tab-3">
+            This is a Tab-3
+          </tab-panel>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <h2>Basic accordion</h2>
+      <div class="example-box">
+        <div class="accordion">
+          <details>
+            <summary>Accordion 1</summary>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.</div>
+          </details>
+          <details>
+            <summary>Accordion 2</summary>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.</div>
+          </details>
+          <details disabled aria-disabled="disabled">
+            <summary>Disabled Accordion</summary>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
